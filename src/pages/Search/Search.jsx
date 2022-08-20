@@ -1,22 +1,25 @@
 import './Search.css';
-import React from 'react';
 import Pokecard from '../../components/Pokecard/Pokecard';
+import React, { useContext, useEffect } from 'react';
+import { AppContext } from '../../App';
 
-export default function Search({ onChange, onClick, value, isSelected, poke }) {
+export default function Search() {
+    const { isSelected, search, setSearch, searchPokemon, favoritePokeList, poke } = useContext(AppContext);
+
     return (
         <>
             <section className="search-wrap">
                 <input
                     className="search-input"
                     placeholder="Search PokeAPI"
-                    onChange={onChange}
+                    onChange={(event) => { setSearch(event.target.value) }}
                     type="search"
-                    value={value}
+                    value={search}
                 />
                 <button
                     className="search-button"
                     type="submit"
-                    onClick={onClick}
+                    onClick={searchPokemon}
                 >
                     <i id="search-icon" className="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -26,15 +29,7 @@ export default function Search({ onChange, onClick, value, isSelected, poke }) {
                     ?
                     <p>Please Choose a Pokemon</p>
                     :
-                    <Pokecard
-                        id={poke.id}
-                        name={poke.name}
-                        img={poke.img}
-                        type={poke.type}
-                        ability={poke.ability}
-                        height={poke.height}
-                        weight={poke.weight}
-                    />
+                    <Pokecard />
                 }
             </div>
         </>

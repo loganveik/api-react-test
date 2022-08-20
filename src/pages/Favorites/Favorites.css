@@ -1,0 +1,7 @@
+.fav-container {
+    width: 100%;
+    /* background-color: darkmagenta; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

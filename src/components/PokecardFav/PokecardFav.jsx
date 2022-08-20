@@ -1,30 +1,23 @@
-import './Pokecard.css';
-import React, { useContext } from 'react';
+import './PokecardFav.css';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../App';
 
-export default function Pokecard() {
+export default function PokecardFav({item}) {
     const { poke, setPoke, favoritePokeList, setFavoritePokeList } = useContext(AppContext);
 
-    const addToFavorites = () => {
-        setPoke({ ...poke, isFavorited: true });
-        setFavoritePokeList(favoritePokeList.concat(poke));
-    };
-
-    const removeFromFavorites = (id) => {
+    const removeFromFavorites = () => {
         setPoke({ ...poke, isFavorited: false });
-        const newArr = favoritePokeList.filter((item) => item.id !== id);
-        setFavoritePokeList(newArr);
     };
 
     return (
-        <div className="pokecard-container" key={poke.id}>
+        <div className="pokecard-container">
             <div className="pokecard">
                 <div className="front">
                     <div className="poke-img">
-                        <img src={poke.img} alt={poke.name} />
+                        <img src={item.img} alt={item.name} />
                     </div>
                     <div className="poke-info">
-                        <p>{poke.name}</p>
+                        <p>{item.name}</p>
                     </div>
                 </div>
                 <div className="back">
@@ -33,19 +26,19 @@ export default function Pokecard() {
                         <div className="back-stats">
                             <div className="stat-item">
                                 <i className="fa-solid fa-hand-fist"></i>
-                                <p>{poke.type}</p>
+                                <p>{item.type}</p>
                             </div>
                             <div className="stat-item">
                                 <i className="fa-solid fa-wand-sparkles"></i>
-                                <p>{poke.ability}</p>
+                                <p>{item.ability}</p>
                             </div>
                             <div className="stat-item">
                                 <i className="fa-solid fa-ruler-combined"></i>
-                                <p>{poke.height}</p>
+                                <p>{item.height}</p>
                             </div>
                             <div className="stat-item">
                                 <i className="fa-solid fa-scale-balanced"></i>
-                                <p>{poke.weight}</p>
+                                <p>{item.weight}</p>
                             </div>
                         </div>
                         <div className="favBtn">
@@ -53,7 +46,7 @@ export default function Pokecard() {
                                 ?
                                 <i id="icon" onClick={() => removeFromFavorites()} className="check fa-solid fa-check"></i>
                                 :
-                                <i id="icon" onClick={() => addToFavorites()} className="star fa-solid fa-star"></i>
+                                <i id="icon" onClick={() => console.log("nothing")} className="star fa-solid fa-star"></i>
                             }
                         </div>
                     </div>

@@ -12,3 +12,9 @@ SETUP
 2. You will have nav component and POKECARD component
 3. You will have search page and Favorites page
 4. UseEffect for favorites page since its on load, normal api function on search page since nothing loads until u search
+
+
+new todo:
+Just find out how to get way better pokemon images in, and get favorites working. 
+1. run api a second time then log it into poke state obj of new/extra sprite img. Then use that img to display on back of card
+2. adding poki to favorites pushes all obj data to new favpokilist array. map over that array to display all obj(s) on favorites page.
