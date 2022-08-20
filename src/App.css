@@ -1,0 +1,7 @@
+/* maybe make container here with padding etc to align evenly between search/favorite pages */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 2rem;
+}

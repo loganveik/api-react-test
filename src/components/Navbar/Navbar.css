@@ -1,0 +1,33 @@
+nav {
+    background-color: #023e8a;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.nav-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav-links {
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* maybe add underline to signify link is being hovered */

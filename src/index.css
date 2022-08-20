@@ -11,11 +11,15 @@
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  background-color: #48cae4;
 }

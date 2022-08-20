@@ -1,0 +1,45 @@
+.search-wrap {
+    /* background-color: brown; */
+    /* width: 25%; */
+    /* width: 17rem; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* flex-direction: column;
+    align-items: center; */
+    /* justify-content: space-evenly;
+    align-items: center; */
+}
+
+.search-input {
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 15rem;
+    margin-right: 1rem;
+}
+
+.search-button {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#search-icon {
+    font-size: 1rem;
+    background-color: #023e8a;
+    padding: 1rem;
+    border-radius: 50px;
+    color: #ffffff;
+}
+
+.card-container {
+    /* background-color: violet; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
