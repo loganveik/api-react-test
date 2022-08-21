@@ -1,10 +1,14 @@
 import './Search.css';
 import Pokecard from '../../components/Pokecard/Pokecard';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../../App';
 
 export default function Search() {
-    const { isSelected, search, setSearch, searchPokemon, favoritePokeList, poke } = useContext(AppContext);
+    const { search, setSearch, searchPokemon, favoritePokeList, poke, addToFavorites, removeFromFavorites } = useContext(AppContext);
+
+    const favPokeIdArr = favoritePokeList.map(item => item.id);
+    const pokeIdArr = poke.map(item => item.id);
+    const compare = favPokeIdArr.filter(item => pokeIdArr.includes(item));
 
     return (
         <>
@@ -25,12 +29,14 @@ export default function Search() {
                 </button>
             </section>
             <div className="card-container">
-                {!isSelected
-                    ?
-                    <p>Please Choose a Pokemon</p>
-                    :
-                    <Pokecard />
-                }
+                {poke.map((item, index) => (
+                    <Pokecard
+                        key={index}
+                        item={item}
+                        onClick={compare.length > 0 ? () => removeFromFavorites(item) : () => addToFavorites(item)}
+                        iconClass={compare.length > 0 ? "check fa-solid fa-check" : "star fa-solid fa-star"}
+                    />
+                ))}
             </div>
         </>
     )
