@@ -1,7 +1,51 @@
 .fav-container {
     width: 100%;
-    /* background-color: darkmagenta; */
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.fav-content {
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .fav-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .fav-content {
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .fav-content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .fav-content {
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .fav-content {
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fav-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
 }

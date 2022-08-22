@@ -18,6 +18,7 @@ function App() {
   const searchPokemon = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${search}`)
       .then((response) => {
+        console.log(response.data);
         setPoke([response.data]);
         setSearch("");
       })

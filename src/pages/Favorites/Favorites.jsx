@@ -13,18 +13,20 @@ export default function Favorites() {
 
     return (
         <div className="fav-container">
-            {favoritePokeList.map((item, index) => (
-                favoritePokeList.length === 0
-                    ?
-                    <p>Search pokemon to add to here!</p>
-                    :
-                    <Pokecard
-                        key={index}
-                        item={item}
-                        onClick={() => removeFromFavorites(item)}
-                        iconClass={"check fa-solid fa-check"}
-                    />
-            ))}
+            <div className="fav-content">
+                {favoritePokeList.map((item, index) => (
+                    favoritePokeList.length === 0
+                        ?
+                        <p>Search pokemon to add to here!</p>
+                        :
+                        <Pokecard
+                            key={index}
+                            item={item}
+                            onClick={() => removeFromFavorites(item)}
+                            iconClass={"check fa-solid fa-check"}
+                        />
+                ))}
+            </div>
         </div>
     )
 }
