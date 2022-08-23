@@ -25,7 +25,7 @@ function App() {
       .catch(error => {
         const resMsg = error.response.data;
         if (resMsg === "Not Found") {
-          setErrorMsg(`Sorry, ${search} is not Pokemon`);
+          setErrorMsg(`Sorry, ${search} is not a pokemon`);
         }
       })
     .finally(() => setLoading(false));

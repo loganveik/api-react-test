@@ -1,11 +1,12 @@
 # Pokedex
 
 ### Links:
-[Demo](https://loganveik.com)
+[Demo](https://pokedex-lv.herokuapp.com/)
+
 [Repo](https://github.com/loganveik/api-react-test)
 
 ### Description:
-Pokedex is an app where user the can search any pokemon via PokeAPI. A pokecard will be displayed with info related to searched pokemon. User can then click the orange star button on the card which will add that pokecard to favorites via local storage. User can view all favorited pokecards on the favorites page.
+Pokedex is an app where the user can search any pokemon via PokeAPI. A pokecard will be displayed with info related to searched pokemon. User can then click the orange star button on the card which will add that pokecard to favorites via local storage. User can view all favorited pokecards on the favorites page.
 
 ### Technologies Used:
 React, localStorage, CSS, Axios, PokeAPI
