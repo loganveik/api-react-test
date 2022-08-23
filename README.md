@@ -1,20 +1,23 @@
-TODO:
-1. Reuseable Nav component at top where "PokeAPI" is on left and "search/favorites" page links on right.
-2. Use react-router for above pages. ("/" will be search page and "/favorites" will be favorites page).
-3. SEARCH PAGE will have search bar (like marvel proj), and once searched, "POKECARD" component will pop up with searched pokemon.
-4. FAVORITES PAGE will be all "POKECARDS" that have been saved to favorites via localStorage.
-5. "POKECARDS" will display info along with "fav btn"(star icon). Once favorited, the isFavorited state turns to true which will save in localStorage. Additionally, once favorited, the star icon will become "Saved!/Favorited!".
-6. When an already favorited "POKECARD" is unfavorited, its deleted form localStorage, state is changed back to false,and is reverted back to star icon.
-7. When "POKECARD" is on screen, user must interact with it to display all other info. (via hover/click). Maybe a modal pops up? Or a card flip?
+# Pokedex
 
-SETUP
-1. You will have "search state", pokedex "empty array state", "isFavorited state (boolean)", and possibly a localStorage state containing all favorites (array).
-2. You will have nav component and POKECARD component
-3. You will have search page and Favorites page
-4. UseEffect for favorites page since its on load, normal api function on search page since nothing loads until u search
+### Links:
+[demo](https://loganveik.com)
+[repo](https://github.com/loganveik/api-react-test)
 
+### Description:
+Pokedex is an app where user the can search any pokemon via PokeAPI. A pokecard will be displayed with info related to searched pokemon. User can then click the orange star button on the card which will add that pokecard to favorites via local storage. User can view all favorited pokecards on the favorites page.
 
-new todo:
-Just find out how to get way better pokemon images in, and get favorites working. 
-1. run api a second time then log it into poke state obj of new/extra sprite img. Then use that img to display on back of card
-2. adding poki to favorites pushes all obj data to new favpokilist array. map over that array to display all obj(s) on favorites page.
+### Technologies Used:
+HTML5, CSS3, Javascript
+
+### How to Use:
+1) Search Page
+![searchpage](img/pokedex-img-1)
+2) Searching PokeApi for Pikachu
+![pokeapisearch](img/pokedex-img-2)
+3) Hovering over Pokecard will flip card to reveal stats and an orange star button which will "Add To Favorites"
+![cardflipadd](img/pokedex-img-3)
+4) Favorites Page displaying all favorites including the recently-added Pikachu
+![favoritespage](img/pokedex-img-4)
+5) Hovering over Pokecard will flip card to reveal a green check button which will "Remove From Favorites"
+![cardflipremove](img/pokedex-img-5)
