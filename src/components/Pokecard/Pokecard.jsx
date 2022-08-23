@@ -8,7 +8,8 @@ export default function Pokecard({ item, onClick, iconClass }) {
                 <div className="pokecard">
                     <div className="front">
                         <div className="poke-img">
-                            <img src={item.sprites.front_default} alt={item.name} />
+                            {/* <img src={item.sprites.front_default} alt={item.name} /> */}
+                            <img src={`https://img.pokemondb.net/artwork/${item.name}.jpg`} alt={item.name} />
                         </div>
                         <div className="poke-info">
                             <p>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</p>
@@ -18,7 +19,7 @@ export default function Pokecard({ item, onClick, iconClass }) {
                         <div className="back-info">
                             <p className="stats-text">STATS</p>
                             <div className="back-stats">
-                            <div className="stat-item">
+                                <div className="stat-item">
                                     <i className="fa-solid fa-heart"></i>
                                     <p>{item.stats[0].base_stat + " hp"}</p>
                                 </div>
