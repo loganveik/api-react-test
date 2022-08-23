@@ -30,4 +30,6 @@ nav {
     font-size: 1rem;
 }
 
-/* maybe add underline to signify link is being hovered */
+.nav-link:hover {
+    text-decoration: underline;
+}

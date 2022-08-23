@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Search from './pages/Search/Search';
 import Favorites from './pages/Favorites/Favorites';
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import axios from 'axios';
 
 export const AppContext = createContext();
@@ -13,15 +13,30 @@ function App() {
   const [poke, setPoke] = useState([]);
   const [favoritePokeList, setFavoritePokeList] = useState([]);
   const [search, setSearch] = useState("");
-  // const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const searchPokemon = () => {
+    setLoading(true);
     axios.get(`https://pokeapi.co/api/v2/pokemon/${search}`)
       .then((response) => {
-        console.log(response.data);
         setPoke([response.data]);
-        setSearch("");
       })
+      .catch(error => {
+        const resMsg = error.response.data;
+        if (resMsg === "Not Found") {
+          setErrorMsg(`Sorry, ${search} is not Pokemon`);
+        }
+      })
+    .finally(() => setLoading(false));
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchPokemon(search);
+    setPoke([]);
+    setSearch("");
+    setErrorMsg("");
   }
 
   const saveToLocalStorage = (items) => {
@@ -51,8 +66,11 @@ function App() {
         search,
         setSearch,
         searchPokemon,
+        handleSubmit,
         addToFavorites,
-        removeFromFavorites
+        removeFromFavorites,
+        errorMsg,
+        loading
       }}>
         <div className="container">
           <Routes>

@@ -2,9 +2,10 @@ import './Search.css';
 import Pokecard from '../../components/Pokecard/Pokecard';
 import React, { useContext } from 'react';
 import { AppContext } from '../../App';
+import { SpinnerCircularFixed } from 'spinners-react';
 
 export default function Search() {
-    const { search, setSearch, searchPokemon, favoritePokeList, poke, addToFavorites, removeFromFavorites } = useContext(AppContext);
+    const { search, setSearch, handleSubmit, favoritePokeList, poke, addToFavorites, removeFromFavorites, errorMsg, loading } = useContext(AppContext);
 
     const favPokeIdArr = favoritePokeList.map(item => item.id);
     const pokeIdArr = poke.map(item => item.id);
@@ -23,20 +24,29 @@ export default function Search() {
                 <button
                     className="search-button"
                     type="submit"
-                    onClick={searchPokemon}
+                    onClick={handleSubmit}
                 >
                     <i id="search-icon" className="fa-solid fa-magnifying-glass"></i>
                 </button>
             </section>
             <div className="card-container">
-                {poke.map((item, index) => (
-                    <Pokecard
-                        key={index}
-                        item={item}
-                        onClick={compare.length > 0 ? () => removeFromFavorites(item) : () => addToFavorites(item)}
-                        iconClass={compare.length > 0 ? "check fa-solid fa-check" : "star fa-solid fa-star"}
-                    />
-                ))}
+                {loading
+                    ?
+                    <SpinnerCircularFixed color="#ffffff" secondaryColor="00ffffff" speed={250} thickness={150} />
+                    :
+                    errorMsg === ""
+                        ?
+                        poke.map((item, index) => (
+                            <Pokecard
+                                key={index}
+                                item={item}
+                                onClick={compare.length > 0 ? () => removeFromFavorites(item) : () => addToFavorites(item)}
+                                iconClass={compare.length > 0 ? "check fa-solid fa-check" : "star fa-solid fa-star"}
+                            />
+                        ))
+                        :
+                        <p>{errorMsg}</p>
+                }
             </div>
         </>
     )

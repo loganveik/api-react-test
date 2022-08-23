@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .fav-content {
@@ -9,6 +10,11 @@
     gap: 2rem;
     justify-items: center;
     width: 100%;
+}
+
+#noFavMsg {
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 @media (min-width: 600px) {
