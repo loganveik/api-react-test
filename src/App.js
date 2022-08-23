@@ -28,10 +28,13 @@ function App() {
           setErrorMsg(`Sorry, ${search} is not a pokemon`);
         }
       })
-    .finally(() => setLoading(false));
+      .finally(() => setLoading(false));
   }
 
   const handleSubmit = (e) => {
+    if (search === "") {
+      return
+    }
     e.preventDefault();
     searchPokemon(search);
     setPoke([]);
