@@ -73,7 +73,8 @@ function App() {
         addToFavorites,
         removeFromFavorites,
         errorMsg,
-        loading
+        loading,
+        saveToLocalStorage
       }}>
         <div className="container">
           <Routes>
