@@ -7,6 +7,9 @@ export default function Favorites() {
     const { favoritePokeList, setFavoritePokeList, removeFromFavorites } = useContext(AppContext);
 
     useEffect(() => {
+        if (favoritePokeList.length === 0) {
+            return
+        }
         const ls_poke_favorites = JSON.parse(localStorage.getItem("favorite-pokemon-list"));
         setFavoritePokeList(ls_poke_favorites);
     }, [])
